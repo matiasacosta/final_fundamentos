@@ -2,10 +2,10 @@ from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtGui import QPixmap
 from vistas_py.menu_principal import Ui_menu_principal
 from controladores.controlador_eleccion_profesores import ControladorEleccionProfesor
-from controladores.preguntas import dame_pregunta , respuesta, dame_nombre_profesor
+from controladores.adivinador import Adivinador
+from modelo.arbol import Arbol
 
 class ControladorMenuPrincipal(QMainWindow):
-
     def __init__(self):
         super(ControladorMenuPrincipal, self).__init__()
         self.menu_principal = Ui_menu_principal()
@@ -24,86 +24,34 @@ class ControladorMenuPrincipal(QMainWindow):
         self.menu_principal.comenzarBtn.clicked.connect(self.comenzar)
 
     def comenzar(self):
+        self.arbol = Arbol()
+        self.arbol = self.arbol.entrenar()
         self.menu_principal.sipreguntaBtn.setVisible(True)
         self.menu_principal.nopreguntaBtn.setVisible(True)
         self.menu_principal.comenzarBtn.setVisible(False)
-        pregunta = dame_pregunta()
+        self.adivinador = Adivinador()
+        pregunta = self.adivinador.dame_pregunta(self.arbol)
         self.menu_principal.preguntasLb.setText(pregunta)
         self.menu_principal.sipreguntaBtn.clicked.connect(self.respuesta_afirmativa)
         self.menu_principal.nopreguntaBtn.clicked.connect(self.respuesta_negativa)
 
     def respuesta_afirmativa(self):
-        respuesta(1,self.menu_principal.preguntasLb.text())
+        self.adivinador.respuesta(1,self.menu_principal.preguntasLb.text(), self.arbol  )
         self.proxima_pregunta()
 
     def respuesta_negativa(self):
-        respuesta(0,self.menu_principal.preguntasLb.text())
+        self.adivinador.respuesta(0,self.menu_principal.preguntasLb.text(),self.arbol)
         self.proxima_pregunta()
 
     def proxima_pregunta(self):
-        pregunta = dame_pregunta()
+        pregunta = self.adivinador.dame_pregunta(self.arbol)
         if pregunta == None:
             myPixmap = QPixmap("imagenes/fin.png")
             self.menu_principal.preguntasLb.setPixmap(myPixmap)
             self.menu_principal.sipreguntaBtn.setDisabled(True)
             self.menu_principal.nopreguntaBtn.setDisabled(True)
-            nombre_profesor = dame_nombre_profesor()
+            nombre_profesor = self.adivinador.dame_nombre_profesor(self.arbol)
             self.menu_principal.fotoLb.setText(nombre_profesor)
             print(nombre_profesor)
         else:
             self.menu_principal.preguntasLb.setText(pregunta)
-
-
-"""
-    def ranking(self):
-        ventana = ControladorRanking()
-        ventana.exec_()
-
-    def empezar(self):
-        self.facemash.empezarBtn.setDisabled(True)
-        profesorA, profesorB = dame_competidores()
-        path = str("imagenes/" + profesorA.foto)
-        myPixmap = QPixmap(path)
-        self.facemash.foto1Lb.setPixmap(myPixmap)
-        path = str("imagenes/" + profesorB.foto)
-        myPixmap2 = QPixmap(path)
-        self.facemash.foto2Lb.setPixmap(myPixmap2)
-        #CARGA DE BANDERAS EN LA INTERFAZ
-        self.facemash.id1Lb.setVisible(False)
-        self.facemash.id2Lb.setVisible(False)
-        self.facemash.id1Lb.setText(str(profesorA.id))
-        self.facemash.id2Lb.setText(str(profesorB.id))
-
-    def gano_uno(self):
-        ganador = int(self.facemash.id1Lb.text())
-        perdedor = int(self.facemash.id2Lb.text())
-        self.rankear(ganador, perdedor)
-
-    def gano_dos(self):
-        ganador = int(self.facemash.id2Lb.text())
-        perdedor = int(self.facemash.id1Lb.text())
-        self.rankear(ganador, perdedor)
-
-    def rankear(self, ganador_id, perdedor_id):
-        guardar_ganador(ganador_id, perdedor_id)
-        profesorA, profesorB = dame_competidores()
-        if profesorB == None:
-            myPixmap = QPixmap("imagenes/fin.png")
-            self.facemash.foto1Lb.setPixmap(myPixmap)
-            myPixmap2 = QPixmap("imagenes/gracias.png")
-            self.facemash.foto2Lb.setPixmap(myPixmap2)
-            self.facemash.empezarBtn.setDisabled(False)
-            self.facemash.voto1Btn.setDisabled(True)
-            self.facemash.voto2btn.setDisabled(True)
-        else:
-            path = str("imagenes/" + profesorA.foto)
-            myPixmap = QPixmap(path)
-            self.facemash.foto1Lb.setPixmap(myPixmap)
-            path = str("imagenes/" + profesorB.foto)
-            myPixmap2 = QPixmap(path)
-            self.facemash.foto2Lb.setPixmap(myPixmap2)
-            # CARGA DE BANDERAS EN LA INTERFAZ
-            self.facemash.id1Lb.setVisible(False)
-            self.facemash.id2Lb.setVisible(False)
-            self.facemash.id1Lb.setText(str(profesorA.id))
-            self.facemash.id2Lb.setText(str(profesorB.id)) """

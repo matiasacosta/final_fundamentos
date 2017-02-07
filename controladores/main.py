@@ -2,7 +2,6 @@ import sys
 from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow
 from controladores.controlador_menu_principal import ControladorMenuPrincipal
 
-#PRUEBA REPO
 def mostrar_ventana():
     app = QApplication(sys.argv)
     ventana = ControladorMenuPrincipal()

@@ -13,6 +13,18 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Adivinador Profesores</string>
   </property>
@@ -56,11 +68,20 @@ p, li { white-space: pre-wrap; }
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QLabel" name="preguntasLb">
+       <property name="maximumSize">
+        <size>
+         <width>377</width>
+         <height>329</height>
+        </size>
+       </property>
        <property name="text">
         <string/>
        </property>
        <property name="textFormat">
         <enum>Qt::RichText</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -79,7 +100,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="sipreguntaBtn">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>80</x>
       <y>360</y>
       <width>99</width>
       <height>27</height>
@@ -97,7 +118,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="nopreguntaBtn">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>240</x>
       <y>360</y>
       <width>99</width>
       <height>27</height>
@@ -139,7 +160,7 @@ p, li { white-space: pre-wrap; }
     </property>
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>370</x>
       <y>360</y>
       <width>99</width>
       <height>27</height>
@@ -155,15 +176,6 @@ p, li { white-space: pre-wrap; }
      <string>¡Comenzar!</string>
     </property>
    </widget>
-   <zorder>infoLb</zorder>
-   <zorder>horizontalLayoutWidget</zorder>
-   <zorder>sipreguntaBtn</zorder>
-   <zorder>nopreguntaBtn</zorder>
-   <zorder>siprofesorBtn</zorder>
-   <zorder>noprofesorBtn</zorder>
-   <zorder>comenzarBtn</zorder>
-   <zorder>fotoLb</zorder>
-   <zorder>fotoLb</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

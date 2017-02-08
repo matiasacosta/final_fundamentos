@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>492</width>
-    <height>300</height>
+    <height>261</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="elegirbtn">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>260</y>
+     <x>180</x>
+     <y>220</y>
      <width>99</width>
      <height>27</height>
     </rect>
@@ -25,88 +25,6 @@
    <property name="text">
     <string>Elegir</string>
    </property>
-  </widget>
-  <widget class="QWidget" name="gridLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>60</y>
-     <width>473</width>
-     <height>191</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="0">
-     <widget class="QRadioButton" name="martaBtn">
-      <property name="text">
-       <string>Marta Sanz</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QRadioButton" name="gloriaBtn">
-      <property name="text">
-       <string>Gloria Bianchi</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <widget class="QRadioButton" name="ricardoBtn">
-      <property name="text">
-       <string>Ricardo Lopez</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QRadioButton" name="celiaBtn">
-      <property name="text">
-       <string>Celia Cintas</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QRadioButton" name="diegoFBtn">
-      <property name="text">
-       <string>Diego Firmenich</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QRadioButton" name="marceloGBtn">
-      <property name="text">
-       <string>Marcelo Gomez</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QRadioButton" name="marcelosBtn">
-      <property name="text">
-       <string>Marcelo Santander</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="QRadioButton" name="diegoVHBtn">
-      <property name="text">
-       <string>Diego Van Haaster</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QRadioButton" name="nahuelBtn">
-      <property name="text">
-       <string>Nahuel Defossé</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <widget class="QRadioButton" name="sebastianBtn">
-      <property name="text">
-       <string>Sebastian Schanz</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
   </widget>
   <widget class="QLabel" name="disculpasLb">
    <property name="geometry">
@@ -120,6 +38,155 @@
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;¡Lo Sentimos! ¿En qué profesor estabas pensando?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>60</y>
+     <width>431</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="title">
+    <string>Profesores</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+   <widget class="QRadioButton" name="celiaBtn">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>30</y>
+      <width>150</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Celia Cintas</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="diegoFBtn">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>30</y>
+      <width>149</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Diego Firmenich</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="diegoVHBtn">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>30</y>
+      <width>160</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Diego Van Haaster</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="gloriaBtn">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>60</y>
+      <width>150</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Gloria Bianchi</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="martaBtn">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>90</y>
+      <width>150</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Marta Sanz</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="nahuelBtn">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>90</y>
+      <width>149</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nahuel Defossé</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="ricardoBtn">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>90</y>
+      <width>160</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ricardo Lopez</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="marcelosBtn">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>60</y>
+      <width>160</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Marcelo Santander</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="marceloGBtn">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>60</y>
+      <width>232</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Marcelo Gomez</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="sebastianBtn">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>120</y>
+      <width>471</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sebastian Schanz</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

@@ -1,34 +1,15 @@
 from sklearn import tree
 import numpy as np
 from sklearn.tree import _tree
+import pydotplus
 
 class Arbol(tree.DecisionTreeClassifier):
 
-    def arbol_a_codigo(self):
-        tree_ = self.tree_
-        feature_name = [
-            self.nombre_caracteristicas[i] if i != _tree.TREE_UNDEFINED else "undefined!"
-            for i in tree_.feature
-            ]
-        print("def tree({}):".format(", ".join(self.nombres_caracteristicas)))
-
-        def recurse(node, depth):
-            indent = "  " * depth
-            if tree_.feature[node] != _tree.TREE_UNDEFINED:
-                name = feature_name[node]
-                threshold = tree_.threshold[node]
-                print("{}if {} <= {}:".format(indent, name, threshold))
-                recurse(tree_.children_left[node], depth + 1)
-                print("{}else:  # if {} > {}".format(indent, name, threshold))
-                recurse(tree_.children_right[node], depth + 1)
-            else:
-                print("{}return {}".format(indent, tree_.value[node]))
-
-        recurse(0, 1)
-
-    def __index__(self):
+    def __init__(self):
         super(Arbol, self).__init__(criterion='entropy')
         self.nombres_caracteristicas=['Corte de Pelo','Sexo','Año de Enseñanza','Estatura','Cargo en la Materia','Materia','Cuatrimestre de Clase']
+        self.profesores=['Celia Cintas', 'Diego Firmenich', 'Diego Van Haaster', 'Gloria Bianchi', 'Marcelo Gomez',
+                         'Marcelo Santander', 'Marta Saenz', 'Nahuel Defosse', 'Ricardo Lopez', 'Sebastian Schanz']
     """FEATURES:
     'primer_cuatri': 1,
     'segundo_cuatri': 2,
@@ -111,3 +92,12 @@ class Arbol(tree.DecisionTreeClassifier):
 
         resultado = self.predict([[Profesor.pelo, Profesor.sexo, Profesor.año, Profesor.estatura, Profesor.cargo, Profesor.materia, Profesor.cuatrimestre]])
         return resultado[0]
+
+    def dibujar_arbol(self):
+        dot_data = tree.export_graphviz(self, out_file=None,
+                                        feature_names=self.nombres_caracteristicas,
+                                        class_names=self.profesores,
+                                        filled=True, rounded=True,
+                                        special_characters=True)
+        graph = pydotplus.graph_from_dot_data(dot_data)
+        graph.write_pdf("profesores.pdf")

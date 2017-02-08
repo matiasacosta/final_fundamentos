@@ -6,6 +6,8 @@ class Adivinador():
         self.indice_pregunta = 0
         self.indice_materia = 0
         self.profesor_incognito = Profesor()
+        self.profesor_incognito.año = 1
+        self.profesor_incognito.materia = 0
            
     preuguntas = [
         "¿Tiene el pelo largo?",
@@ -27,10 +29,13 @@ class Adivinador():
 
         pregunta = self.preuguntas[self.indice_pregunta]
         if self.indice_pregunta == 10:
-            while not (arbol.materia_año[self.indice_materia] == self.profesor_incognito.año):
+            try:
+                while not (arbol.materia_año[self.indice_materia] == self.profesor_incognito.año):
+                    self.indice_materia += 1
+                pregunta = pregunta + arbol.materias[self.indice_materia] + " ?"
                 self.indice_materia += 1
-            pregunta = pregunta + arbol.materias[self.indice_materia] + " ?"
-            self.indice_materia += 1
+            except IndexError:
+                return None
         else:
             self.indice_pregunta += 1
         return pregunta

@@ -119,7 +119,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Marta Sanz</string>
+     <string>Marta Saenz</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="nahuelBtn">
@@ -132,7 +132,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Nahuel Defossé</string>
+     <string>Nahuel Defosse</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="ricardoBtn">

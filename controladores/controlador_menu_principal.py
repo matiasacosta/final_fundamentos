@@ -14,9 +14,9 @@ class ControladorMenuPrincipal(QMainWindow):
         self.menu_principal.nopreguntaBtn.setVisible(False)
         self.menu_principal.siprofesorBtn.setVisible(False)
         self.menu_principal.noprofesorBtn.setVisible(False)
-        str = "<html><head/><body><p align=\"center\">Bienvenido Al Adivinador de Profesores!</p><p align=\"center\">Mi tarea es adivinar el profesor que usted está pensando</p><p align=\"center\">Las opciones son:</p><p align=\"center\">Celia Cintas </p><p align=\"center\">" \
+        str = "<html><head/><body><b><p align=\"center\">Bienvenido Al Adivinador de Profesores!</p><p align=\"center\">Mi tarea es adivinar el profesor</p><p align=\"center\">que usted está pensando</p><p align=\"center\">Las opciones son:</p><p align=\"center\">Celia Cintas </p><p align=\"center\">" \
               "Diego Firmenich</p><p align=\"center\">Diego Van Haaster</p><p align=\"center\">Gloria Bianchi</p><p align=\"center\">Marcelo Gomez</p><p align=\"center\">Marcelo Santander</p><p align=\"center\">Marta Sanz</p><p align=\"center\">Nahuel Defossé</p><p align=\"center\"" \
-              ">Ricardo López</p><p align=\"center\">Sebastian Schanz</p><p align=\"center\"><br/></p></body></html>"
+              ">Ricardo López</p><p align=\"center\">Sebastian Schanz</p><p align=\"center\"></b><br/></p></body></html>"
         self.menu_principal.preguntasLb.setText(str)
         path = "imagenes/DIT.png"
         myPixmap = QPixmap(path)
@@ -35,7 +35,7 @@ class ControladorMenuPrincipal(QMainWindow):
         self.menu_principal.comenzarBtn.setVisible(False)
         self.adivinador = Adivinador()
         pregunta = self.adivinador.dame_pregunta(self.arbol)
-        self.menu_principal.preguntasLb.setText(pregunta)
+        self.menu_principal.preguntasLb.setText("<html><head/><body><b><p align=\"center\"><H1> {} </H1></p></b><br/></p></body></html>".format(pregunta))
         self.menu_principal.sipreguntaBtn.clicked.connect(self.respuesta_afirmativa)
         self.menu_principal.nopreguntaBtn.clicked.connect(self.respuesta_negativa)
         self.menu_principal.siprofesorBtn.clicked.connect(self.acertaste)
@@ -63,7 +63,7 @@ class ControladorMenuPrincipal(QMainWindow):
             myPixmap = QPixmap(path)
             self.menu_principal.fotoLb.setPixmap(myPixmap)
         else:
-            self.menu_principal.preguntasLb.setText(pregunta)
+            self.menu_principal.preguntasLb.setText("<html><head/><body><b><p align=\"center\"><H1> {} </H1></p></b><br/></p></body></html>".format(pregunta))
 
     def arbol_de_profesores(self):
         self.arbol.dibujar_arbol()

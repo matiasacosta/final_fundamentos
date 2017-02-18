@@ -20,7 +20,7 @@ class ControladorEleccionProfesor(QDialog):
                 profesor = boton.text()
 
         if profesor == None:
-            self.eleccion_profesor.disculpasLb.setText("POR FAVOR ELIGA ALGUNO DE LOS PROFESORES")
+            self.eleccion_profesor.disculpasLb.setText(" < html > < head / > < body > < p > < span style = \" font-weight:600;\" > POR FAVOR ELIJA ALGUNO DE LOS PROFESORES < / span > < / p > < / body > < / html >")
         else:
             with open('muestras.txt', 'a') as f:
                 f.write("{} {} {} {} {} {} {}\n".format(

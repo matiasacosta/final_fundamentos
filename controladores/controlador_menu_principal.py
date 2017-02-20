@@ -66,8 +66,8 @@ class ControladorMenuPrincipal(QMainWindow):
     def acertaste(self):
         myPixmap = QPixmap("imagenes/gane.png")
         self.menu_principal.preguntasLb.setPixmap(myPixmap)
-        myPixmap = QPixmap("imagenes/gracias.png")
-        self.menu_principal.fotoLb.setPixmap(myPixmap)
+        self.menu_principal.fotoLb.setText(
+            "<html><head/><body><b><p align=\"center\"><H1> ¡Gané! Gracias por Jugar </H1></p></b><br/></p></body></html>")
         self.menu_principal.siprofesorBtn.setVisible(False)
         self.menu_principal.noprofesorBtn.setVisible(False)
 

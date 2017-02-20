@@ -1,0 +1,21 @@
+{
+
+"Profesores": ["Celia Cintas", "Diego Firmanich", "Gloria Bianchini", "Marcelo Gomez", "Marcelo Santander",
+               "Marta Saenz", "Nahuel Defosse", "Ricardo Lopez", "Sebastian Schanz"],
+
+"Caracteristicas": ["Corte de Pelo", "Sexo", "Año de Enseñanza", "Estatura", "Cargo en la Materia", "Materia",
+                    "Cuatrimestre de Clase"],
+
+"Materias": ["Expresión de Problemas y Algorítmos", "Elementos de Informática", "Algoritmica y Programación I",
+             "Algoritmica y Programación II", "Arquitectura de las Computadoras", "Base de Datos I",
+             "Introcucción a la Concurrencia", "Laboratorio de Programación y Lenguajes", "Sistemas Operativos",
+             "Ingenieria de Software I - T", "Desarrollo de Softwate", "Fundamentos Teóricos de Informática",
+             "Ingenieria de Software II - T", "Redes y Transmisión de Datos", "Paradigmas y Lenguajes de Programación - T",
+             "Administración de Redes y Seguridad", "Ingeniería de Software III - T", "Sistemas Distribuidos",
+             "Administración de Proyectos", "Aplicaciones Web", "Taller de nuevas Tecnologías",
+             "Sistemas de Soporte para la Toma de Decisiones"],
+
+"Año de la Materia": [1,1,1,2,2,2,2,3,3,3,3,3,3,4,4,4,4,4,5,5,5,5]
+}
+
+

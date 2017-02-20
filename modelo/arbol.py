@@ -1,7 +1,6 @@
 from sklearn import tree
 import numpy as np
-from sklearn.tree import _tree
-import pydotplus, json
+import json
 
 class Arbol(tree.DecisionTreeClassifier):
 
@@ -30,12 +29,3 @@ class Arbol(tree.DecisionTreeClassifier):
 
         resultado = self.predict([[Profesor.pelo, Profesor.sexo, Profesor.año, Profesor.estatura, Profesor.cargo, Profesor.materia, Profesor.cuatrimestre]])
         return resultado[0]
-
-    def dibujar_arbol(self):
-        dot_data = tree.export_graphviz(self, out_file=None,
-                                        feature_names=self.nombres_caracteristicas,
-                                        class_names=self.profesores,
-                                        filled=True, rounded=True,
-                                        special_characters=True)
-        graph = pydotplus.graph_from_dot_data(dot_data)
-        graph.write_pdf("profesores.pdf")

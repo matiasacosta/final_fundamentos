@@ -41,6 +41,7 @@ class Ui_menu_principal(object):
         self.fotoLb.setText("")
         self.fotoLb.setTextFormat(QtCore.Qt.RichText)
         self.fotoLb.setAlignment(QtCore.Qt.AlignCenter)
+        self.fotoLb.setWordWrap(True)
         self.fotoLb.setObjectName("fotoLb")
         self.horizontalLayout.addWidget(self.fotoLb)
         self.sipreguntaBtn = QtWidgets.QPushButton(self.centralwidget)

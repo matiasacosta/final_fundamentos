@@ -24,7 +24,6 @@ class ControladorMenuPrincipal(QMainWindow):
         self.arbol = Arbol()
         self.arbol = self.arbol.entrenar()
         self.menu_principal.comenzarBtn.clicked.connect(self.comenzar)
-        self.menu_principal.action_arbol_de_Profesores.triggered.connect(self.arbol_de_profesores)
 
     def comenzar(self):
         path = "imagenes/adivinador.png"
@@ -59,14 +58,10 @@ class ControladorMenuPrincipal(QMainWindow):
             myPixmap = QPixmap("imagenes/Tu profesor es.png")
             self.menu_principal.preguntasLb.setPixmap(myPixmap)
             nombre_profesor = self.adivinador.dame_nombre_profesor(self.arbol)
-            path = "imagenes/"+nombre_profesor+".png"
-            myPixmap = QPixmap(path)
-            self.menu_principal.fotoLb.setPixmap(myPixmap)
+            self.menu_principal.fotoLb.setText("<html><head/><body><b><p align=\"center\"><H1>¿Pensaste en {}? </H1></p></b><br/></p></body></html>".format(nombre_profesor))
         else:
             self.menu_principal.preguntasLb.setText("<html><head/><body><b><p align=\"center\"><H1> {} </H1></p></b><br/></p></body></html>".format(pregunta))
 
-    def arbol_de_profesores(self):
-        self.arbol.dibujar_arbol()
 
     def acertaste(self):
         myPixmap = QPixmap("imagenes/gane.png")
@@ -75,7 +70,6 @@ class ControladorMenuPrincipal(QMainWindow):
         self.menu_principal.fotoLb.setPixmap(myPixmap)
         self.menu_principal.siprofesorBtn.setVisible(False)
         self.menu_principal.noprofesorBtn.setVisible(False)
-        #self.menu_principal.comenzarBtn.setVisible(True)
 
     def aprender(self):
         ventana = ControladorEleccionProfesor(self.adivinador.profesor_incognito)

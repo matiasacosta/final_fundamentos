@@ -23,16 +23,16 @@ class Adivinador():
         "¿ Está en la catedra de "
     ]
     
-    def dame_pregunta(self,arbol):
+    def dame_pregunta(self,bosque):
         if self.indice_materia == 22:
             return None
 
         pregunta = self.preuguntas[self.indice_pregunta]
         if self.indice_pregunta == 10:
             try:
-                while not (arbol.materia_año[self.indice_materia] == self.profesor_incognito.año):
+                while not (bosque.materia_año[self.indice_materia] == self.profesor_incognito.año):
                     self.indice_materia += 1
-                pregunta = pregunta + arbol.materias[self.indice_materia] + " ?"
+                pregunta = pregunta + bosque.materias[self.indice_materia] + " ?"
                 self.indice_materia += 1
             except IndexError:
                 return None
@@ -40,7 +40,7 @@ class Adivinador():
             self.indice_pregunta += 1
         return pregunta
 
-    def respuesta(self, numero, pregunta, arbol):
+    def respuesta(self, numero, pregunta, bosque):
         if 'pelo' in pregunta:
             self.profesor_incognito.set_pelo(numero)
         if 'mujer' in pregunta:
@@ -67,50 +67,50 @@ class Adivinador():
         if 'catedra' in pregunta:
             if numero != 0:
                 self.indice_materia = 22
-                if arbol.materias[0] in pregunta:
+                if bosque.materias[0] in pregunta:
                     self.profesor_incognito.set_materia(0)
-                if arbol.materias[1] in pregunta:
+                if bosque.materias[1] in pregunta:
                     self.profesor_incognito.set_materia(1)
-                if arbol.materias[2] in pregunta:
+                if bosque.materias[2] in pregunta:
                     self.profesor_incognito.set_materia(2)
-                if arbol.materias[3] in pregunta:
+                if bosque.materias[3] in pregunta:
                     self.profesor_incognito.set_materia(3)
-                if arbol.materias[4] in pregunta:
+                if bosque.materias[4] in pregunta:
                     self.profesor_incognito.set_materia(4)
-                if arbol.materias[5] in pregunta:
+                if bosque.materias[5] in pregunta:
                     self.profesor_incognito.set_materia(5)
-                if arbol.materias[6] in pregunta:
+                if bosque.materias[6] in pregunta:
                     self.profesor_incognito.set_materia(6)
-                if arbol.materias[7] in pregunta:
+                if bosque.materias[7] in pregunta:
                     self.profesor_incognito.set_materia(7)
-                if arbol.materias[8] in pregunta:
+                if bosque.materias[8] in pregunta:
                     self.profesor_incognito.set_materia(8)
-                if arbol.materias[9] in pregunta:
+                if bosque.materias[9] in pregunta:
                     self.profesor_incognito.set_materia(9)
-                if arbol.materias[10] in pregunta:
+                if bosque.materias[10] in pregunta:
                     self.profesor_incognito.set_materia(10)
-                if arbol.materias[11] in pregunta:
+                if bosque.materias[11] in pregunta:
                     self.profesor_incognito.set_materia(11)
-                if arbol.materias[12] in pregunta:
+                if bosque.materias[12] in pregunta:
                     self.profesor_incognito.set_materia(12)
-                if arbol.materias[13] in pregunta:
+                if bosque.materias[13] in pregunta:
                     self.profesor_incognito.set_materia(13)
-                if arbol.materias[14] in pregunta:
+                if bosque.materias[14] in pregunta:
                     self.profesor_incognito.set_materia(14)
-                if arbol.materias[15] in pregunta:
+                if bosque.materias[15] in pregunta:
                     self.profesor_incognito.set_materia(15)
-                if arbol.materias[16] in pregunta:
+                if bosque.materias[16] in pregunta:
                     self.profesor_incognito.set_materia(16)
-                if arbol.materias[17] in pregunta:
+                if bosque.materias[17] in pregunta:
                     self.profesor_incognito.set_materia(17)
-                if arbol.materias[18] in pregunta:
+                if bosque.materias[18] in pregunta:
                     self.profesor_incognito.set_materia(18)
-                if arbol.materias[19] in pregunta:
+                if bosque.materias[19] in pregunta:
                     self.profesor_incognito.set_materia(19)
-                if arbol.materias[20] in pregunta:
+                if bosque.materias[20] in pregunta:
                     self.profesor_incognito.set_materia(20)
-                if arbol.materias[21] in pregunta:
+                if bosque.materias[21] in pregunta:
                     self.profesor_incognito.set_materia(21)
     
-    def dame_nombre_profesor(self, arbol):
-        return arbol.predecir_profesor(self.profesor_incognito)
+    def dame_nombre_profesor(self, bosque):
+        return bosque.predecir_profesor(self.profesor_incognito)

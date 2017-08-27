@@ -1,9 +1,10 @@
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtGui import QPixmap
 from vistas_py.menu_principal import Ui_menu_principal
-from controladores.controlador_eleccion_profesores import ControladorEleccionProfesor
-from controladores.adivinador import Adivinador
+from .controlador_eleccion_profesores import ControladorEleccionProfesor
+from .adivinador import Adivinador
 from modelo.bosque import Bosque
+import os
 
 class ControladorMenuPrincipal(QMainWindow):
     def __init__(self):
@@ -18,7 +19,7 @@ class ControladorMenuPrincipal(QMainWindow):
               "Diego Firmenich</p><p align=\"center\">Diego Van Haaster</p><p align=\"center\">Gloria Bianchi</p><p align=\"center\">Marcelo Gomez</p><p align=\"center\">Marcelo Santander</p><p align=\"center\">Marta Sanz</p><p align=\"center\">Nahuel Defossé</p><p align=\"center\"" \
               ">Ricardo López</p><p align=\"center\">Sebastian Schanz</p><p align=\"center\"></b><br/></p></body></html>"
         self.menu_principal.preguntasLb.setText(str)
-        path = "imagenes/DIT.png"
+        path = os.path.abspath("controladores/imagenes/DIT.png")
         myPixmap = QPixmap(path)
         self.menu_principal.fotoLb.setPixmap(myPixmap)
         self.bosque = Bosque()
@@ -26,7 +27,7 @@ class ControladorMenuPrincipal(QMainWindow):
         self.menu_principal.comenzarBtn.clicked.connect(self.comenzar)
 
     def comenzar(self):
-        path = "imagenes/adivinador.png"
+        path = os.path.abspath("controladores/imagenes/adivinador.png")
         myPixmap = QPixmap(path)
         self.menu_principal.fotoLb.setPixmap(myPixmap)
         self.menu_principal.sipreguntaBtn.setVisible(True)
@@ -55,7 +56,8 @@ class ControladorMenuPrincipal(QMainWindow):
             self.menu_principal.nopreguntaBtn.setVisible(False)
             self.menu_principal.siprofesorBtn.setVisible(True)
             self.menu_principal.noprofesorBtn.setVisible(True)
-            myPixmap = QPixmap("imagenes/Tu profesor es.png")
+            path = os.path.abspath("controladores/imagenes/Tu profesor es.png")
+            myPixmap = QPixmap(path)
             self.menu_principal.preguntasLb.setPixmap(myPixmap)
             nombre_profesor = self.adivinador.dame_nombre_profesor(self.bosque)
             self.menu_principal.fotoLb.setText("<html><head/><body><b><p align=\"center\"><H1>¿Pensaste en {}? </H1></p></b><br/></p></body></html>".format(nombre_profesor))
@@ -65,7 +67,8 @@ class ControladorMenuPrincipal(QMainWindow):
 
     def acertaste(self):
         #falta guardar el profe y la muestra
-        myPixmap = QPixmap("imagenes/gane.png")
+        path = os.path.abspath("controladores/imagenes/gane.png")
+        myPixmap = QPixmap(path)
         self.menu_principal.preguntasLb.setPixmap(myPixmap)
         self.menu_principal.fotoLb.setText(
             "<html><head/><body><b><p align=\"center\"><H1> ¡Gané! Gracias por Jugar </H1></p></b><br/></p></body></html>")

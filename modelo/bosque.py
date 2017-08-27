@@ -1,12 +1,14 @@
 from sklearn.ensemble import RandomForestClassifier
 import numpy as np
 import json
+import os
 
 class Bosque(RandomForestClassifier):
 
     def __init__(self):
         super(Bosque, self).__init__(criterion='entropy',n_estimators=100)
-        archivo_jason = open('datos.json', 'r')
+        print()
+        archivo_jason = open(os.path.abspath('modelo/datos.json'), 'r')
         datos_jason = json.load(archivo_jason)
         self.nombres_caracteristicas=datos_jason['Caracteristicas']
         self.profesores=datos_jason['Profesores']
@@ -15,8 +17,8 @@ class Bosque(RandomForestClassifier):
         archivo_jason.close()
 
     def entrenar(self):
-        self.muestras = np.loadtxt('muestras_train.txt')
-        archivo_porfesores = open('profesores_train.txt','r')
+        self.muestras = np.loadtxt(os.path.abspath('modelo/muestras_train.txt'))
+        archivo_porfesores = open(os.path.abspath('modelo/profesores_train.txt'),'r')
         profesores = []
         linea = archivo_porfesores.readline()
         #PODEMOS USAR UN FOR (QUEDA MAS LIMPIO)
@@ -28,8 +30,8 @@ class Bosque(RandomForestClassifier):
         return self.fit(self.muestras, profesores)
 
     def testear(self):
-        self.muestras = np.loadtxt('muestras_test.txt')
-        archivo_porfesores = open('profesores_test.txt','r')
+        self.muestras = np.loadtxt(os.path.abspath('modelo/muestras_test.txt'))
+        archivo_porfesores = open(os.path.abspath('modelo/profesores_train.txt'),'r')
         profesores = []
         linea = archivo_porfesores.readline()
         #PODEMOS USAR UN FOR (QUEDA MAS LIMPIO)

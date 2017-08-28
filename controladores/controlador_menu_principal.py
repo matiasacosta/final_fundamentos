@@ -16,8 +16,8 @@ class ControladorMenuPrincipal(QMainWindow):
         self.menu_principal.siprofesorBtn.setVisible(False)
         self.menu_principal.noprofesorBtn.setVisible(False)
         str = "<html><head/><body><b><p align=\"center\">Bienvenido Al Adivinador de Profesores!</p><p align=\"center\">Mi tarea es adivinar el profesor</p><p align=\"center\">que usted está pensando</p><p align=\"center\">Las opciones son:</p><p align=\"center\">Celia Cintas </p><p align=\"center\">" \
-              "Diego Firmenich</p><p align=\"center\">Diego Van Haaster</p><p align=\"center\">Gloria Bianchi</p><p align=\"center\">Marcelo Gomez</p><p align=\"center\">Marcelo Santander</p><p align=\"center\">Marta Sanz</p><p align=\"center\">Nahuel Defossé</p><p align=\"center\"" \
-              ">Ricardo López</p><p align=\"center\">Sebastian Schanz</p><p align=\"center\"></b><br/></p></body></html>"
+              "Diego Firmenich</p><p align=\"center\">Diego Van Haaster</p><p align=\"center\">Marcelo Santander</p><p align=\"center\">Marta Sanz</p><p align=\"center\">Nahuel Defossé</p><p align=\"center\"" \
+              ">Ricardo López</p><p align=\"center\"></b><br/></p></body></html>"
         self.menu_principal.preguntasLb.setText(str)
         path = os.path.abspath("controladores/imagenes/DIT.png")
         myPixmap = QPixmap(path)

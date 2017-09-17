@@ -10,7 +10,7 @@ class Adivinador():
         self.profesor_incognito.materia = 0
            
     preuguntas = [
-        "¿Tiene el pelo largo?",
+        "¿El profesor/a tiene el pelo largo?",
         "¿Es mujer?",
         "¿Da clases Teóricas?",
         "¿Da su matéria en el segundo cuatrimestre?",

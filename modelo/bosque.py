@@ -7,14 +7,12 @@ class Bosque(RandomForestClassifier):
 
     def __init__(self):
         super(Bosque, self).__init__(criterion='entropy',n_estimators=100)
-        print()
-        archivo_jason = open(os.path.abspath('modelo/datos.json'), 'r')
-        datos_jason = json.load(archivo_jason)
-        self.nombres_caracteristicas=datos_jason['Caracteristicas']
-        self.profesores=datos_jason['Profesores']
-        self.materias = datos_jason['Materias']
-        self.materia_año = datos_jason['Año de la Materia']
-        archivo_jason.close()
+        with open(os.path.abspath('modelo/datos.json'), 'r',encoding='utf-8') as archivo_jason:
+            datos_jason = json.load(archivo_jason)
+            self.nombres_caracteristicas=datos_jason['Caracteristicas']
+            self.profesores=datos_jason['Profesores']
+            self.materias = datos_jason['Materias']
+            self.materia_año = datos_jason['Año de la Materia']
 
     def entrenar(self):
         self.muestras = np.loadtxt(os.path.abspath('modelo/muestras_train.txt'))

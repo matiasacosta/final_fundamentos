@@ -3,7 +3,7 @@ import numpy as np
 import json
 import os
 import pandas as pd
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn import metrics
 
 class Bosque(RandomForestClassifier):
@@ -52,7 +52,7 @@ class Bosque(RandomForestClassifier):
         df = pd.read_csv(path, sep=',', header=None)
         array_atributos = df[df.columns[0:7]].values
         array_profesores = df[df.columns[7]].values
-        Xtrain, Xtest, ytrain, ytest = train_test_split(digits.data, digits.target,random_state=0)
+        Xtrain, Xtest, ytrain, ytest = train_test_split(array_atributos, array_profesores,random_state=0,train_size=0.80,test_size=0.20)
         self.fit(Xtrain, ytrain)
         ypred = self.predict(Xtest)
         print(metrics.classification_report(ypred, ytest))

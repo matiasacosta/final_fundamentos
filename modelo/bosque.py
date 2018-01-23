@@ -2,6 +2,9 @@ from sklearn.ensemble import RandomForestClassifier
 import numpy as np
 import json
 import os
+import pandas as pd
+from sklearn.cross_validation import train_test_split
+from sklearn import metrics
 
 class Bosque(RandomForestClassifier):
 
@@ -43,3 +46,13 @@ class Bosque(RandomForestClassifier):
     def predecir_profesor(self, Profesor):
         resultado = self.predict([[Profesor.pelo, Profesor.sexo, Profesor.año, Profesor.estatura, Profesor.cargo, Profesor.materia, Profesor.cuatrimestre]])
         return resultado[0]
+
+    def prueba_reporte(self):
+        path = os.path.abspath('modelo/muestras.csv')
+        df = pd.read_csv(path, sep=',', header=None)
+        array_atributos = df[df.columns[0:7]].values
+        array_profesores = df[df.columns[7]].values
+        Xtrain, Xtest, ytrain, ytest = train_test_split(digits.data, digits.target,random_state=0)
+        self.fit(Xtrain, ytrain)
+        ypred = self.predict(Xtest)
+        print(metrics.classification_report(ypred, ytest))

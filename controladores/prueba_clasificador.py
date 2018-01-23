@@ -3,4 +3,4 @@ from modelo.Profesor import Profesor
 
 bosque_prueba = Bosque()
 
-bosque_prueba = bosque_prueba.entrenar()
+bosque_prueba.prueba_reporte()

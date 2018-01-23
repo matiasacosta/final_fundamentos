@@ -5,6 +5,9 @@ import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 class Bosque(RandomForestClassifier):
 
@@ -56,3 +59,8 @@ class Bosque(RandomForestClassifier):
         self.fit(Xtrain, ytrain)
         ypred = self.predict(Xtest)
         print(metrics.classification_report(ypred, ytest))
+        mat = confusion_matrix(ytest, ypred)
+        sns.heatmap(mat.T, square=True, annot=True, fmt='d', cbar=False)
+        plt.xlabel('true label')
+        plt.ylabel('predicted label')
+        plt.show()

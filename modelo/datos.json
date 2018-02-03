@@ -1,8 +1,7 @@
 {
 
 "Profesores": ["Celia Cintas", 
-               "Diego Firmanich", 
-               "Gloria Bianchini", 
+               "Diego Firmanich",  
                "Marcelo Gomez", 
                "Marcelo Santander",
                "Marta Saenz", 
@@ -46,9 +45,10 @@
              "Administración de Proyectos", 
              "Aplicaciones Web", 
              "Taller de nuevas Tecnologías",
-             "Sistemas de Soporte para la Toma de Decisiones"],
+             "Sistemas de Soporte para la Toma de Decisiones",
+             "Base de Datos II"],
 
-"Año de la Materia": [1,1,1,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,5,5,5,5]
+"Año de la Materia": [1,1,1,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,5,5,5,5,4]
 
 }
 

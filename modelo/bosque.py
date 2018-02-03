@@ -21,30 +21,13 @@ class Bosque(RandomForestClassifier):
             self.materia_año = datos_jason['Año de la Materia']
 
     def entrenar(self):
-        self.muestras = np.loadtxt(os.path.abspath('modelo/muestras_train.txt'))
-        archivo_porfesores = open(os.path.abspath('modelo/profesores_train.txt'),'r')
-        profesores = []
-        linea = archivo_porfesores.readline()
-        #PODEMOS USAR UN FOR (QUEDA MAS LIMPIO)
-        while linea != "":
-            linea = linea.replace("\n",'')
-            profesores.append(linea)
-            linea = archivo_porfesores.readline()
-        archivo_porfesores.close()
-        return self.fit(self.muestras, profesores)
+        path = os.path.abspath('modelo/muestras.csv')
+        df = pd.read_csv(path, sep=',', header=None)
+        array_atributos = df[df.columns[0:7]].values
+        array_profesores = df[df.columns[7]].values
+        return self.fit(array_atributos, array_profesores)
+        
 
-    def testear(self):
-        self.muestras = np.loadtxt(os.path.abspath('modelo/muestras_test.txt'))
-        archivo_porfesores = open(os.path.abspath('modelo/profesores_train.txt'),'r')
-        profesores = []
-        linea = archivo_porfesores.readline()
-        #PODEMOS USAR UN FOR (QUEDA MAS LIMPIO)
-        while linea != "":
-            linea = linea.replace("\n",'')
-            profesores.append(linea)
-            linea = archivo_porfesores.readline()
-        archivo_porfesores.close()
-        return self.score(self.muestras, profesores)
 
     def predecir_profesor(self, Profesor):
         resultado = self.predict([[Profesor.pelo, Profesor.sexo, Profesor.año, Profesor.estatura, Profesor.cargo, Profesor.materia, Profesor.cuatrimestre]])

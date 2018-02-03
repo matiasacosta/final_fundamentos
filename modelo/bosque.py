@@ -55,7 +55,7 @@ class Bosque(RandomForestClassifier):
         df = pd.read_csv(path, sep=',', header=None)
         array_atributos = df[df.columns[0:7]].values
         array_profesores = df[df.columns[7]].values
-        Xtrain, Xtest, ytrain, ytest = train_test_split(array_atributos, array_profesores,random_state=0,train_size=0.80,test_size=0.20)
+        Xtrain, Xtest, ytrain, ytest = train_test_split(array_atributos, array_profesores,random_state=0,train_size=0.70,test_size=0.30)
         self.fit(Xtrain, ytrain)
         ypred = self.predict(Xtest)
         print(metrics.classification_report(ypred, ytest))

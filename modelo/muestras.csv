@@ -1,28 +1,58 @@
-1,1,3,1,0,10,1,Celia Cintas
-1,1,3,1,0,10,1,Celia Cintas
-1,1,5,1,0,19,1,Celia Cintas
+1,1,3,1,1,12,1,Celia Cintas
+1,1,3,1,1,12,1,Celia Cintas
+1,1,5,1,0,23,1,Celia Cintas
 0,0,1,0,0,2,1,Diego Firmenich
 0,0,2,0,0,3,0,Diego Firmenich
-0,0,3,0,1,6,0,Diego Firmenich
-0,0,3,1,0,9,1,Diego Van Haaster
-0,0,3,1,0,9,1,Diego Van Haaster
-0,0,4,1,0,14,1,Diego Van Haaster
+0,0,3,0,1,8,0,Diego Firmenich
+0,0,3,1,0,11,1,Diego Van Haaster
+0,0,3,1,0,11,1,Diego Van Haaster
+0,0,4,1,0,17,1,Diego Van Haaster
 1,0,1,1,0,0,0,Marcelo Santander
-1,0,2,1,0,4,1,Marcelo Santander
-1,0,2,1,0,4,1,Marcelo Santander
+1,0,2,1,0,6,1,Marcelo Santander
+1,0,2,1,0,8,1,Marcelo Santander
 1,1,2,0,1,3,0,Marta Saenz
-1,1,3,0,1,8,0,Marta Saenz
-1,1,3,0,1,11,1,Marta Saenz
+1,1,3,0,1,10,0,Marta Saenz
+1,1,3,0,1,13,1,Marta Saenz
 0,0,1,0,1,1,0,Ricardo Lopez
+0,0,4,0,1,14,0,Ricardo Lopez
+0,0,4,0,1,18,1,Ricardo Lopez
+1,0,2,1,0,7,1,Nahuel Defosse
+1,0,3,1,0,9,0,Nahuel Defosse
+1,0,4,1,0,16,1,Nahuel Defosse
+1,0,4,0,0,12,1,Samuel Almonacid
+0,0,4,0,0,12,1,Pablo Navarro
+0,0,4,0,0,24,0,Cristian Parise
+0,0,4,0,0,18,1,Cristian Parise
+0,0,4,1,0,16,1,Bruno Zappellini
+0,0,4,1,0,19,1,Bruno Zappellini
+1,1,2,1,0,6,1,Valeria Entraigas
+1,1,2,0,0,4,0,Valeria Entraigas
+1,1,3,1,1,12,1,Celia Cintas
+1,1,3,1,1,12,1,Celia Cintas
+1,1,5,1,0,23,1,Celia Cintas
+0,0,1,0,0,2,1,Diego Firmenich
+0,0,2,0,0,3,0,Diego Firmenich
+0,0,3,0,1,8,0,Diego Firmenich
+0,0,3,1,0,11,1,Diego Van Haaster
+0,0,3,1,0,11,1,Diego Van Haaster
+0,0,4,1,0,17,1,Diego Van Haaster
+1,0,1,1,0,0,0,Marcelo Santander
+1,0,2,1,0,6,1,Marcelo Santander
+1,0,2,1,0,8,1,Marcelo Santander
+1,1,2,0,1,3,0,Marta Saenz
+1,1,3,0,1,10,0,Marta Saenz
+1,1,3,0,1,13,1,Marta Saenz
 0,0,1,0,1,1,0,Ricardo Lopez
-0,0,4,0,1,12,0,Ricardo Lopez
-1,0,2,1,0,5,1,Nahuel Defosse
-1,0,3,1,0,7,0,Nahuel Defosse
-1,0,4,1,0,12,0,Nahuel Defosse
-1,1,5,1,0,19,1,Celia Cintas
-0,0,3,0,0,18,0,Diego Firmenich
-0,0,4,1,0,14,1,Diego Van Haaster
-1,0,3,1,0,6,0,Marcelo Santander
-1,1,5,0,1,16,0,Marta Saenz
-0,0,4,0,1,15,1,Ricardo Lopez
-1,0,4,1,1,13,1,Nahuel Defosse
+0,0,4,0,1,14,0,Ricardo Lopez
+0,0,4,0,1,18,1,Ricardo Lopez
+1,0,2,1,0,7,1,Nahuel Defosse
+1,0,3,1,0,9,0,Nahuel Defosse
+1,0,4,1,0,16,1,Nahuel Defosse
+1,0,4,0,0,12,1,Samuel Almonacid
+0,0,4,0,0,12,1,Pablo Navarro
+0,0,4,0,0,24,0,Cristian Parise
+0,0,4,0,0,18,1,Cristian Parise
+0,0,4,1,0,16,1,Bruno Zappellini
+0,0,4,1,0,19,1,Bruno Zappellini
+1,1,2,1,0,6,1,Valeria Entraigas
+1,1,2,0,0,4,0,Valeria Entraigas

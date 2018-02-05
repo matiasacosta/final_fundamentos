@@ -8,6 +8,7 @@ from sklearn import metrics
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
+from sklearn.ensemble import ExtraTreesClassifier
 
 class Bosque(RandomForestClassifier):
 
@@ -42,6 +43,16 @@ class Bosque(RandomForestClassifier):
         self.fit(Xtrain, ytrain)
         ypred = self.predict(Xtest)
         print(metrics.classification_report(ypred, ytest))
+        model = ExtraTreesClassifier()
+        #Ajustamos el modelo
+        model.fit(Xtrain,ytrain)
+        #Pedimos que nos muestre la importancia de cada variable
+        lista_caracteristicas = ['pelo','Sexo','Año','Estatura','Cargo','Materia','Cuatrimestre']
+        print("Importancia de las Caracteristicas en la clasificacion:")
+        print("Caracteristica - Porcentaje")
+        for i in range(0,7): 
+            print("{},{}%".format(lista_caracteristicas[i], round(model.feature_importances_[i]*100,2)))
+
         mat = confusion_matrix(ytest, ypred)
         sns.heatmap(mat.T, square=True, annot=True, fmt='d', cbar=False)
         plt.xlabel('true label')

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>429</width>
-    <height>289</height>
+    <width>522</width>
+    <height>352</height>
    </rect>
   </property>
   <property name="focusPolicy">
@@ -22,8 +22,8 @@
   <widget class="QPushButton" name="elegirbtn">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>240</y>
+     <x>410</x>
+     <y>310</y>
      <width>99</width>
      <height>27</height>
     </rect>
@@ -50,8 +50,8 @@
     <rect>
      <x>50</x>
      <y>50</y>
-     <width>341</width>
-     <height>181</height>
+     <width>441</width>
+     <height>251</height>
     </rect>
    </property>
    <property name="focusPolicy">
@@ -71,8 +71,8 @@
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>326</width>
-      <height>136</height>
+      <width>421</width>
+      <height>220</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
@@ -83,13 +83,6 @@
       <widget class="QRadioButton" name="celiaBtn">
        <property name="text">
         <string>Celia Cintas</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QRadioButton" name="diegoFBtn">
-       <property name="text">
-        <string>Diego Firmenich</string>
        </property>
       </widget>
      </item>
@@ -107,6 +100,13 @@
        </property>
       </widget>
      </item>
+     <item row="2" column="0">
+      <widget class="QRadioButton" name="diegoVHBtn">
+       <property name="text">
+        <string>Diego Van Haaster</string>
+       </property>
+      </widget>
+     </item>
      <item row="2" column="1">
       <widget class="QRadioButton" name="marcelosBtn">
        <property name="text">
@@ -121,10 +121,59 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
-      <widget class="QRadioButton" name="diegoVHBtn">
+     <item row="3" column="1">
+      <widget class="QRadioButton" name="samuelBtn">
        <property name="text">
-        <string>Diego Van Haaster</string>
+        <string>Samuel Almonacid</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QRadioButton" name="pabloBtn">
+       <property name="text">
+        <string>Pablo Navarro</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QRadioButton" name="cristianBtn">
+       <property name="text">
+        <string>Cristian Parise</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QRadioButton" name="brunoBtn">
+       <property name="text">
+        <string>Bruno Zappellini</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QRadioButton" name="valeriaBtn">
+       <property name="text">
+        <string>Valeria Entraigas</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QRadioButton" name="diegoFBtn">
+       <property name="text">
+        <string>Diego Firmenich</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QRadioButton" name="gabrielBtn">
+       <property name="text">
+        <string>Gabriel Ingravallo</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QRadioButton" name="marcelogBtn">
+       <property name="text">
+        <string>Marcelo Gomez</string>
        </property>
       </widget>
      </item>

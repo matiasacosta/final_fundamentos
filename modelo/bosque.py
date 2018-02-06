@@ -1,5 +1,6 @@
 from sklearn.ensemble import RandomForestClassifier
 import numpy as np
+import itertools
 import json
 import os
 import pandas as pd
@@ -10,6 +11,33 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.ensemble import ExtraTreesClassifier
 
+def plot_confusion_matrix(cm, classes,
+                          normalize=False,
+                          title='Matriz de Confusion',
+                          cmap=plt.cm.Blues):
+        """
+        This function prints and plots the confusion matrix.
+        Normalization can be applied by setting `normalize=True`.
+        """
+
+        plt.imshow(cm, interpolation='nearest', cmap=cmap)
+        plt.title(title)
+        plt.colorbar()
+        
+        
+        tick_marks = np.arange(len(classes))
+        plt.xticks(tick_marks, classes, rotation=45)
+        plt.yticks(tick_marks, classes)
+
+        fmt = '.2f' if normalize else 'd'
+        thresh = cm.max() / 2.
+        for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+            plt.text(j, i, format(cm[i, j], fmt),
+                    horizontalalignment="center",
+                    color="white" if cm[i, j] > thresh else "black")
+
+        plt.ylabel('Profesores Verdaderos')
+        plt.xlabel('Profesores Predecidos')
 class Bosque(RandomForestClassifier):
 
     def __init__(self):
@@ -52,9 +80,20 @@ class Bosque(RandomForestClassifier):
         print("Caracteristica - Porcentaje")
         for i in range(0,7): 
             print("{},{}%".format(lista_caracteristicas[i], round(model.feature_importances_[i]*100,2)))
+        for x,y in zip(ytest, ypred):
+            print("{}-{}".format(x,y))
+        
+        lista_unida = ypred
+        lista_unida.append(ytest)        
+
+        profesores_labels = []
+        for i in lista_unida:
+            if i not in profesores_labels:
+                profesores_labels.append(i)
 
         mat = confusion_matrix(ytest, ypred)
-        sns.heatmap(mat.T, square=True, annot=True, fmt='d', cbar=False)
-        plt.xlabel('true label')
-        plt.ylabel('predicted label')
+        plt.figure()
+        plot_confusion_matrix(mat, classes=profesores_labels,
+                      title='Matriz de Confusion')
         plt.show()
+

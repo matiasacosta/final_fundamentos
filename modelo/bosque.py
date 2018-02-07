@@ -26,7 +26,7 @@ def plot_confusion_matrix(cm, classes,
         
         
         tick_marks = np.arange(len(classes))
-        plt.xticks(tick_marks, classes, rotation=45)
+        plt.xticks(tick_marks, classes, rotation=90)
         plt.yticks(tick_marks, classes)
 
         fmt = '.2f' if normalize else 'd'
@@ -83,15 +83,17 @@ class Bosque(RandomForestClassifier):
         for x,y in zip(ytest, ypred):
             print("{}-{}".format(x,y))
         
-        lista_unida = ypred
-        lista_unida.append(ytest)        
+        profesores_predecidos = ypred.tolist()
+        profesores_de_test = ytest.tolist()
+
+        total_profesores = profesores_predecidos + profesores_de_test
 
         profesores_labels = []
-        for i in lista_unida:
-            if i not in profesores_labels:
-                profesores_labels.append(i)
+        for profesor in total_profesores:
+            if profesor not in profesores_labels:
+                profesores_labels.append(profesor)
 
-        mat = confusion_matrix(ytest, ypred)
+        mat = confusion_matrix(ytest, ypred,profesores_labels)
         plt.figure()
         plot_confusion_matrix(mat, classes=profesores_labels,
                       title='Matriz de Confusion')

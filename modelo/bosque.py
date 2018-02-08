@@ -70,16 +70,20 @@ class Bosque(RandomForestClassifier):
         Xtrain, Xtest, ytrain, ytest = train_test_split(array_atributos, array_profesores,random_state=0,train_size=0.70,test_size=0.30)
         self.fit(Xtrain, ytrain)
         ypred = self.predict(Xtest)
+        print("REPORTE DE MEDICIONES DEL BOSQUE")
+        print("===============================================")
         print(metrics.classification_report(ypred, ytest))
         model = ExtraTreesClassifier()
         #Ajustamos el modelo
         model.fit(Xtrain,ytrain)
         #Pedimos que nos muestre la importancia de cada variable
         lista_caracteristicas = ['pelo','Sexo','Año','Estatura','Cargo','Materia','Cuatrimestre']
+        print("===============================================")
         print("Importancia de las Caracteristicas en la clasificacion:")
         print("Caracteristica - Porcentaje")
         for i in range(0,7): 
             print("{},{}%".format(lista_caracteristicas[i], round(model.feature_importances_[i]*100,2)))
+        print("===============================================")
         for x,y in zip(ytest, ypred):
             print("{}-{}".format(x,y))
         
